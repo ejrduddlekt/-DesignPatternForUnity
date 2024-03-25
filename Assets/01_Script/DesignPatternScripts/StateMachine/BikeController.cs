@@ -4,17 +4,13 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 
-public enum Direction
-{
-    Left = -1,
-    Right = 1
-}
+
 public class BikeController : MonoBehaviour
 {
     public float maxSpeed = 2f;
     public float turnDistance = 2f;
 
-    public float CurrentSpeed {  get; set; }
+    public float CurrentSpeed { get; set; }
 
     public Direction CurrentTurnDirection { get; set; }
 
@@ -47,4 +43,7 @@ public class BikeController : MonoBehaviour
         CurrentTurnDirection = direction;
         _bikeStateContext.Transition(_turnState);
     }
+
+    //------------------------------------------------------------------------------
+
 }

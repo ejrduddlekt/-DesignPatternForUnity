@@ -22,6 +22,5 @@ public class BikeStartState : MonoBehaviour, IBikeState
         {
             _bikeController.transform.Translate(Vector3.forward * _bikeController.CurrentSpeed * Time.deltaTime);
         }
-
     }
 }
