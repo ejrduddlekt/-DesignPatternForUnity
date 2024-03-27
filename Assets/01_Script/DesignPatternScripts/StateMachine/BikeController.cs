@@ -43,7 +43,4 @@ public class BikeController : MonoBehaviour
         CurrentTurnDirection = direction;
         _bikeStateContext.Transition(_turnState);
     }
-
-    //------------------------------------------------------------------------------
-
 }
