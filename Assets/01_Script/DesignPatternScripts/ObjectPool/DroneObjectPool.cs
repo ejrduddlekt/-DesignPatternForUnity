@@ -5,9 +5,14 @@ using UnityEngine.Pool;
 
 public class DroneObjectPool : MonoBehaviour
 {
-    public int maxPoolSize = 10;
+    public int maxPoolSize = 10; //풀에 보관할 인스턴스의 최대 개수를 설정
+
+    //기본 스택 크기 설정, 이것은 드론 인스턴스를 저장하는 데 사용할 스택 데이터 구조체와 관련된 속성이다.
+    //현재는 크게 중요하지 않으니 무시해도 된다.
     public int stackDefaultCapacity = 10;
 
+
+    private IObjectPool<Drone> _pool;
     public IObjectPool<Drone> Pool
     {
         get
@@ -27,11 +32,11 @@ public class DroneObjectPool : MonoBehaviour
         }
     }
 
-    private IObjectPool<Drone> _pool;
+    
 
     private Drone CreatedPooledItem()
     {
-        var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        var go = GameObject.CreatePrimitive(PrimitiveType.Capsule);
         Drone drone = go.AddComponent<Drone>();
 
         go.name = "Drone";

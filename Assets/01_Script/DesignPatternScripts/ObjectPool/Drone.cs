@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -44,16 +43,13 @@ public class Drone : MonoBehaviour
         Pool.Release(this);
     }
 
-    public void ResetDrone()
-    {
-        _currentHealth = maxHealth;
-    }
-
+    //드론이 플레이어를 찾아 공격한다는 내용이지만 세부적인건 구현하지 않았다.
     public void AttackPlayer()
     {
         Debug.Log("Attack player!");
     }
 
+    //매개변수 만큼 데미지를 입으며, 0이하가 되면 풀로 돌아간다.
     public void TakeDamage(float amount)
     {
         _currentHealth -= amount;
@@ -61,4 +57,15 @@ public class Drone : MonoBehaviour
         if (_currentHealth <= 0f)
             ReturnToPool();
     }
+
+    //초기상태로 되돌린다.
+    public void ResetDrone()
+    {
+        _currentHealth = maxHealth;
+    }
 }
+
+
+
+
+
