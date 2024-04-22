@@ -39,3 +39,4 @@ public class GameManager : SingletonMonobehaviour<GameManager>
         }
     }
 }
+ 

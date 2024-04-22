@@ -14,7 +14,7 @@ public class BikeEngine : MonoBehaviour, IBikeElement
     {
         get
         {
-            if(_isTurboOn)
+            if (_isTurboOn)
                 return _defaultSpeed + turboBoost;
 
             return _defaultSpeed;
@@ -27,5 +27,15 @@ public class BikeEngine : MonoBehaviour, IBikeElement
     }
 
 
-    public void Accept()
+    public void Accept(IVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
+
+    private void OnGUI()
+    {
+        GUI.color = Color.green;
+
+        GUI.Label(new Rect(125, 20, 200, 20), "Turbo Boost: " + turboBoost);
+    }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BikeWeapon : MonoBehaviour
+public class BikeWeapon : MonoBehaviour, IBikeElement
 {
     [Header("Range")]
     public int range = 5;

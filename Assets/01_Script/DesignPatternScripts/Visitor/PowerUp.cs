@@ -24,7 +24,7 @@ public class PowerUp : ScriptableObject, IVisitor
     [Tooltip("Boost weapon strength in increments of up to 50%")]
     public int weaponStrength;
 
-    public void Viist(BikeShield bikeShield)
+    public void Visit(BikeShield bikeShield)
     {
         if (healShield)
             bikeShield.health = 100f;
